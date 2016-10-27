@@ -1,0 +1,27 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Gradle : jee-2-jsp.war (exploded)">
+    <output-path>$PROJECT_DIR$/build/libs/exploded/jee-2-jsp.war</output-path>
+    <properties id="gradle-properties">
+      <options external-project-path="$PROJECT_DIR$">
+        <manifest>TWFuaWZlc3QtVmVyc2lvbjogMS4wDQoNCg==</manifest>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/build/libs/exploded/jee-2-jsp.war/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="jee-2-jsp_main/web/Web Gradle : jee-2-jsp.war" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="jee-2-jsp_main" />
+          <element id="dir-copy" path="$PROJECT_DIR$/build/resources/main" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Gradle: org.postgresql:postgresql:9.4.1211" />
+          <element id="library" level="project" name="Gradle: com.zaxxer:HikariCP:2.5.1" />
+          <element id="library" level="project" name="Gradle: org.slf4j:slf4j-api:1.7.7" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

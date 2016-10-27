@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Gradle : jee-2-jsp.war">
+    <output-path>$PROJECT_DIR$/build/libs</output-path>
+    <properties id="gradle-properties">
+      <options external-project-path="$PROJECT_DIR$" />
+    </properties>
+    <root id="archive" name="jee-2-jsp.war">
+      <element id="artifact" artifact-name="Gradle : jee-2-jsp.war (exploded)" />
+    </root>
+  </artifact>
+</component>

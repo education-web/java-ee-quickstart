@@ -1,0 +1,24 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="jee-3-jpa:war exploded">
+    <output-path>$PROJECT_DIR$/target/jee-3-jpa</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="jee-3-jpa" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: com.google.guava:guava:20.0-rc1" />
+          <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-api:2.7" />
+          <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-core:2.7" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.8.3" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.8.3" />
+          <element id="library" level="project" name="Maven: org.yaml:snakeyaml:1.15" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/jee-3-jpa/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="jee-3-jpa/web/Web" />
+    </root>
+  </artifact>
+</component>

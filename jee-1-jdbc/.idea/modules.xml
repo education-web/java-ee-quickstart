@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jee-1-jdbc.iml" filepath="$PROJECT_DIR$/.idea/modules/jee-1-jdbc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jee-1-jdbc_main.iml" filepath="$PROJECT_DIR$/.idea/modules/jee-1-jdbc_main.iml" group="jee-1-jdbc" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jee-1-jdbc_test.iml" filepath="$PROJECT_DIR$/.idea/modules/jee-1-jdbc_test.iml" group="jee-1-jdbc" />
+    </modules>
+  </component>
+</project>

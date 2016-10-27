@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jee-2-jsp.iml" filepath="$PROJECT_DIR$/.idea/modules/jee-2-jsp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jee-2-jsp_main.iml" filepath="$PROJECT_DIR$/.idea/modules/jee-2-jsp_main.iml" group="jee-2-jsp" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jee-2-jsp_test.iml" filepath="$PROJECT_DIR$/.idea/modules/jee-2-jsp_test.iml" group="jee-2-jsp" />
+    </modules>
+  </component>
+</project>

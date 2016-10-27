@@ -1,0 +1,13 @@
+apply plugin: 'java'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compileOnly "org.projectlombok:lombok:1.16.10"
+    compile group: 'org.postgresql', name: 'postgresql', version: '9.4.1211'
+    compile group: 'com.zaxxer', name: 'HikariCP', version: '2.5.1'
+    compile 'org.slf4j:slf4j-api:1.7.21'
+    testCompile 'junit:junit:4.12'
+}
