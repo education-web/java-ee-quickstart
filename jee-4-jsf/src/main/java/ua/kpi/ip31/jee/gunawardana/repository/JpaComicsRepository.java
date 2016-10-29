@@ -5,9 +5,10 @@ import lombok.val;
 import ua.kpi.ip31.jee.gunawardana.model.Comics;
 import ua.kpi.ip31.jee.gunawardana.model.Comics_;
 
-import javax.ejb.Stateless;
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,8 +18,9 @@ import java.util.Optional;
  *
  * @author Ruslan Gunawardana
  */
-@Stateless
 @Log4j2
+@Transactional
+@ApplicationScoped
 public class JpaComicsRepository implements ComicsRepository {
     private final EntityManager em;
 
