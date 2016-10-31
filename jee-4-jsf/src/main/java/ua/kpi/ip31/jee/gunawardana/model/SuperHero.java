@@ -28,10 +28,4 @@ public class SuperHero {
     String name;
 
     String alterEgo;
-
-    public SuperHero(String name, String alterEgo) {
-        this.id = -1;
-        this.name = name;
-        this.alterEgo = alterEgo;
-    }
 }

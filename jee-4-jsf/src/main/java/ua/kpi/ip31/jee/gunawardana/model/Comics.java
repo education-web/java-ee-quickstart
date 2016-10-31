@@ -59,14 +59,4 @@ public class Comics {
     @OneToMany(cascade = ALL, fetch = EAGER, orphanRemoval = true)
     @JoinColumn(nullable = false)
     List<SuperHero> superHeroes;
-
-    public Comics(String title, String publisher, int number, BigDecimal price,
-                  OnlineComics onlineComics, List<SuperHero> superHeroes) {
-        this.title = title;
-        this.publisher = publisher;
-        this.number = number;
-        this.onlineComics = onlineComics;
-        this.superHeroes = superHeroes;
-        this.price = price;
-    }
 }

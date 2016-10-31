@@ -2,6 +2,7 @@ package ua.kpi.ip31.jee.gunawardana.repository;
 
 import ua.kpi.ip31.jee.gunawardana.model.Comics;
 
+import javax.enterprise.context.ApplicationScoped;
 import java.util.List;
 import java.util.Optional;
 

@@ -43,9 +43,4 @@ public class OnlineComics {
     @Valid
     @OneToOne(mappedBy = "onlineComics")
     Comics comics;
-
-    public OnlineComics(String url, BigDecimal price) {
-        this.price = price;
-        this.url = url;
-    }
 }

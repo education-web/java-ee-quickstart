@@ -11,9 +11,12 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+/**
+ * JSF ComicsListView Controller.
+ */
 @Log4j2
 @Model
-public class NewComicsForm {
+public class NewComicsView {
     final FacesContext facesContext;
     final ComicsRepository repository;
 
@@ -22,7 +25,7 @@ public class NewComicsForm {
     final Comics newComics = new Comics();
 
     @Inject
-    public NewComicsForm(FacesContext facesContext, ComicsRepository repository) {
+    public NewComicsView(FacesContext facesContext, ComicsRepository repository) {
         this.facesContext = facesContext;
         this.repository = repository;
     }

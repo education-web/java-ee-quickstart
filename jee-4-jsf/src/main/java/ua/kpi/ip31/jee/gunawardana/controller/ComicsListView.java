@@ -8,6 +8,9 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import java.util.List;
 
+/**
+ * JSF ComicsListView Controller.
+ */
 @Named
 @ApplicationScoped
 public class ComicsListView {

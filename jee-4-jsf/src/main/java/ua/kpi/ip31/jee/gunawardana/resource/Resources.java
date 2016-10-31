@@ -1,5 +1,7 @@
 package ua.kpi.ip31.jee.gunawardana.resource;
 
+import ua.kpi.ip31.jee.gunawardana.stereotype.DevelopmentEnvironment;
+
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Produces;
@@ -12,9 +14,14 @@ import javax.persistence.PersistenceContext;
  */
 @ApplicationScoped
 public class Resources {
-    @PersistenceContext
     @Produces
-    EntityManager em;
+    @PersistenceContext(unitName = "production")
+    EntityManager productionEntityManager;
+
+    @Produces
+    @DevelopmentEnvironment
+    @PersistenceContext(unitName = "development")
+    EntityManager developmentEntityManager;
 
     @Produces
     @RequestScoped
