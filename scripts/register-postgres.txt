@@ -1,8 +1,0 @@
-SET script_path=%~dp0
-start %WILDFLY_HOME%\bin\standalone.bat
-%WILDFLY_HOME%\bin\jboss-cli.bat --connect
-
-:: These commands should be executed in jboss-cli
-module add --name=org.postgres --resources=%script_path%postgresql-9.4.1211.jar --dependencies=javax.api,javax.transaction.api
-/subsystem=datasources/jdbc-driver=postgres:add(driver-name="postgres",driver-module-name="org.postgres",driver-class-name=org.postgresql.Driver)
-data-source add --name=JavaEEDS --jndi-name=java:jboss/datasources/JavaEEDS --driver-name=postgres --connection-url=jdbc:postgresql://localhost:5432/jee --user-name=jee --password=jee
