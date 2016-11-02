@@ -29,6 +29,10 @@ public class SuperHero {
 
     protected SuperHero() {}
 
+    public SuperHero(String name) {
+        this.name = name;
+    }
+
     public SuperHero(String name, String alterEgo) {
         this.id = -1;
         this.name = name;
