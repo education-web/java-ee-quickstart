@@ -45,7 +45,7 @@ public class Comics {
     String publisher;
 
     @Min(0)
-    int number;
+    Integer number;
 
     @DecimalMin("0")
     @Digits(integer = 14, fraction = 2)
@@ -59,4 +59,14 @@ public class Comics {
     @OneToMany(cascade = ALL, fetch = EAGER, orphanRemoval = true)
     @JoinColumn(nullable = false)
     List<SuperHero> superHeroes;
+
+    public Comics(String title, String publisher, Integer number, BigDecimal price,
+                  OnlineComics onlineComics, List<SuperHero> superHeroes) {
+        this.title = title;
+        this.publisher = publisher;
+        this.number = number;
+        this.price = price;
+        this.onlineComics = onlineComics;
+        this.superHeroes = superHeroes;
+    }
 }

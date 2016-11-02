@@ -2,6 +2,7 @@ package ua.kpi.ip31.jee.gunawardana.controller;
 
 import lombok.extern.log4j.Log4j2;
 import ua.kpi.ip31.jee.gunawardana.model.Comics;
+import ua.kpi.ip31.jee.gunawardana.model.OnlineComics;
 import ua.kpi.ip31.jee.gunawardana.repository.ComicsRepository;
 
 import javax.enterprise.inject.Model;
@@ -23,6 +24,9 @@ public class NewComicsView {
     @Produces
     @Named
     final Comics newComics = new Comics();
+    {
+        newComics.setOnlineComics(new OnlineComics());
+    }
 
     @Inject
     public NewComicsView(FacesContext facesContext, ComicsRepository repository) {
@@ -32,6 +36,9 @@ public class NewComicsView {
 
     public void save() {
         try {
+            if (newComics.getOnlineComics().getUrl() == null) {
+                newComics.setOnlineComics(null);
+            }
             repository.save(newComics);
             facesContext.addMessage(null,
                     new FacesMessage(FacesMessage.SEVERITY_INFO, "Registered!", "Registration successful"));

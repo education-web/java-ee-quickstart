@@ -24,7 +24,7 @@
                 <p:message for="title" display="icon"/>
 
                 <h:outputLabel for="number" value="Number:"/>
-                <p:inputNumber id="number" value="#{newComics.number}" required="true" minValue="0" />
+                <p:inputNumber id="number" value="#{newComics.number}" required="true" minValue="0" decimalPlaces="0"/>
                 <p:message for="number" display="icon"/>
 
                 <h:outputLabel for="online-url" value="Online URL:"/>
@@ -34,14 +34,14 @@
                 <p:message for="online-url" display="icon"/>
 
                 <h:outputLabel for="price" value="Price:"/>
-                <p:inputNumber id="price" value="#{newComics.price}" required="true" minValue="0.0" decimalPlaces="2"/>
+                <p:inputNumber id="price" value="#{newComics.price}" minValue="0.0" decimalPlaces="2"/>
                 <p:message for="price" display="icon"/>
 
                 <h:outputLabel for="online-price" value="Online Price:"/>
-                <p:inputNumber id="online-price" value="#{newComics.onlineComics.price}" required="true" minValue="0.0" decimalPlaces="2"/>
+                <p:inputNumber id="online-price" value="#{newComics.onlineComics.price}" minValue="0.0" decimalPlaces="2"/>
                 <p:message for="online-price" display="icon"/>
             </p:panelGrid>
-            <p:commandButton value="Save" update="panel" actionListener="#{newComicsView.save()}" icon="ui-icon-check"/>
+            <p:commandButton value="Save" update="panel" action="index.xhtml" actionListener="#{newComicsView.save()}" icon="ui-icon-check"/>
         </p:panel>
     </h:form>
 </h:body>
