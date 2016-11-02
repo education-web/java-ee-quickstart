@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.math.BigDecimal;
 
 import static java.lang.Integer.parseInt;
-import static java.util.Collections.emptySet;
+import static java.util.Collections.emptyList;
 
 /**
  * Controller saves a new {@link Comics}.
@@ -49,7 +49,7 @@ public class ComicsCreationController extends HttpServlet {
                 parseInt(req.getParameter("number")),
                 price,
                 onlineComics,
-                emptySet());
+                emptyList());
         try {
             comicsRepository.save(comics);
             resp.sendRedirect(req.getContextPath());

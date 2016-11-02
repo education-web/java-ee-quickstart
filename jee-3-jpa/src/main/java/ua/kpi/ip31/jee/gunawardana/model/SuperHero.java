@@ -38,4 +38,9 @@ public class SuperHero {
         this.name = name;
         this.alterEgo = alterEgo;
     }
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }

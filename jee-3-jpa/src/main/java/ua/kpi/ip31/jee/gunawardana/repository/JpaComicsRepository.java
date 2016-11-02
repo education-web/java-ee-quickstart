@@ -1,5 +1,6 @@
 package ua.kpi.ip31.jee.gunawardana.repository;
 
+import lombok.NoArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import lombok.val;
 import ua.kpi.ip31.jee.gunawardana.model.Comics;
@@ -19,16 +20,12 @@ import java.util.Optional;
  * @author Ruslan Gunawardana
  */
 
+@Log4j2
+@NoArgsConstructor
 @Transactional
 @ApplicationScoped
-@Log4j2
 public class JpaComicsRepository implements ComicsRepository {
-    final EntityManager em;
-
-    @Inject
-    public JpaComicsRepository(EntityManager em) {
-        this.em = em;
-    }
+    @Inject EntityManager em;
 
     @Override
     public Optional<Comics> findById(long id) {

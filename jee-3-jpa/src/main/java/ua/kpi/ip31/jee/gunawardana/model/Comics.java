@@ -15,6 +15,7 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
+import java.util.List;
 import java.util.Set;
 
 import static javax.persistence.CascadeType.ALL;
@@ -56,12 +57,12 @@ public class Comics {
     @Valid
     @OneToMany(cascade = ALL, fetch = EAGER, orphanRemoval = true)
     @JoinColumn(nullable = false)
-    Set<SuperHero> superHeroes;
+    List<SuperHero> superHeroes;
 
     protected Comics() {}
 
     public Comics(String title, String publisher, int number, BigDecimal price,
-                  OnlineComics onlineComics, Set<SuperHero> superHeroes) {
+                  OnlineComics onlineComics, List<SuperHero> superHeroes) {
         this.title = title;
         this.publisher = publisher;
         this.number = number;
