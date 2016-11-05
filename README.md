@@ -2,17 +2,15 @@
 
 Project goal is to observe core Java EE technologies in the sample CRUD application.
 
-## Set up the environment
+## How to set up the environment?
 
 ### Set up Wildfly
 
-1. Download Wildfly at http://wildfly.org/downloads/Sample. Sample uses version 10.1.0.Final.
-
+1. Download Wildfly at http://wildfly.org/downloads/Sample. This samples use version 10.1.0.Final.
 2. Unpack the Wildfly archive.
-
 3. Set the `WILDFLY_HOME` environment variable to point to the Wildfly installation directory.
 
-### Set up PostgreSQL
+### Set up PostgreSQL (only for production mode)
 
 1. Download PostgreSQL at https://www.postgresql.org/download/
 2. Connect to PostgreSQL, i.e. using psql or pgAdmin.
@@ -25,7 +23,7 @@ CREATE USER jee WITH PASSWORD 'jee';
 GRANT ALL PRIVILEGES ON DATABASE jee to jee;
 ```
 
-### Register PostgreSQL as datasource in Wildfly
+### Register PostgreSQL as datasource in Wildfly (only for production mode)
 
 #### For Windows
 
@@ -46,9 +44,44 @@ data-source add --name=JavaEEDS --jndi-name=java:jboss/datasources/JavaEEDS --dr
 
 ## Run application
 
+### Development mode
+
 1. Launch Wildfly
-2. Launch PostgreSQL
-3. From the command shell navigate to `jee-4-jsf` and execute command:
+
+For Windows execute following command:
+```dos
+start %WILDFLY_HOME%\bin\standalone.bat
+```
+
+For Unix-based execute following command:
+```shell
+%WILDFLY_HOME%/bin/standalone.sh &
+```
+
+2. From the command shell navigate to the latest sample, fro example: `jee-4-jsf` and execute command:
+```shell
+mvn wildfly:deploy
+```
+
+### Production mode
+
+1. Launch Postgres
+
+For Windows start the Service with name `PostgreSQL 9.6 Server` or similar for other PostgreSQL versions.
+
+2. Launch Wildfly
+
+For Windows execute following command:
+```dos
+start %WILDFLY_HOME%\bin\standalone.bat
+```
+
+For Unix-based execute following command:
+```shell
+%WILDFLY_HOME%/bin/standalone.sh &
+```
+
+3. From the command shell navigate to the latest sample, fro example: `jee-4-jsf` and execute command:
 ```shell
 mvn wildfly:deploy
 ```
