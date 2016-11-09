@@ -195,7 +195,7 @@
                         <directory>${project.basedir}/src/main/resources-prod</directory>
                     </resource>
                     <resource>
-                        <directory>${project.basedir}/src/main/resources/prod</directory>
+                        <directory>${project.basedir}/src/main/resources</directory>
                     </resource>
                 </resources>
             </build>
@@ -215,19 +215,9 @@
                         <directory>${project.basedir}/src/main/resources-dev</directory>
                     </resource>
                     <resource>
-                        <directory>${project.basedir}/src/main/resources/dev</directory>
+                        <directory>${project.basedir}/src/main/resources</directory>
                     </resource>
                 </resources>
-                <plugins>
-                    <plugin>
-                        <artifactId>maven-war-plugin</artifactId>
-                        <version>${version.war.plugin}</version>
-                        <configuration>
-                            <!-- Java EE doesn't require web.xml -->
-                            <failOnMissingWebXml>false</failOnMissingWebXml>
-                        </configuration>
-                    </plugin>
-                </plugins>
             </build>
         </profile>
     </profiles>
