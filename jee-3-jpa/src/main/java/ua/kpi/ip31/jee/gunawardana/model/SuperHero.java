@@ -2,9 +2,7 @@ package ua.kpi.ip31.jee.gunawardana.model;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 import static javax.persistence.GenerationType.IDENTITY;
@@ -17,9 +15,11 @@ import static javax.persistence.GenerationType.IDENTITY;
  */
 @Data
 @Entity
+@Table(name = "super_hero")
 public class SuperHero {
     @Id
     @GeneratedValue(strategy = IDENTITY)
+    @Column(name = "super_hero_id")
     Integer id;
 
     @NotNull

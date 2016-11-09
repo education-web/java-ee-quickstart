@@ -1,18 +1,17 @@
 package ua.kpi.ip31.jee.gunawardana.model;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import org.hibernate.validator.constraints.URL;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
+import java.util.Objects;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
@@ -23,15 +22,19 @@ import static javax.persistence.GenerationType.IDENTITY;
  * @author Ruslan Gunawardana
  */
 @Data
+@EqualsAndHashCode(exclude = "comics")
 @ToString(exclude = "comics")
 @Entity
+@Table(name = "online_comics")
 public class OnlineComics {
     @Id
     @GeneratedValue(strategy = IDENTITY)
+    @Column(name = "online_comics_id")
     Long id;
 
     @NotNull
     @URL
+    @Column(nullable = false)
     String url;
 
     @DecimalMin("0")
@@ -39,7 +42,7 @@ public class OnlineComics {
     BigDecimal price;
 
     @Valid
-    @OneToOne(mappedBy = "onlineComics")
+    @OneToOne
     Comics comics;
 
     protected OnlineComics() {}
@@ -47,5 +50,14 @@ public class OnlineComics {
     public OnlineComics(String url, BigDecimal price) {
         this.price = price;
         this.url = url;
+    }
+
+    public void setComics(Comics newComics) {
+        Comics oldComics = this.comics;
+        this.comics = newComics;
+        if (!Objects.equals(oldComics, newComics)) {
+            if (oldComics != null) oldComics.setOnlineComics(null);
+            if (newComics != null) newComics.setOnlineComics(this);
+        }
     }
 }

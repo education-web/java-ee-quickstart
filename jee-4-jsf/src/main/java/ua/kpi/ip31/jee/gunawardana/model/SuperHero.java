@@ -1,11 +1,8 @@
 package ua.kpi.ip31.jee.gunawardana.model;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 import static javax.persistence.GenerationType.IDENTITY;
@@ -17,11 +14,12 @@ import static javax.persistence.GenerationType.IDENTITY;
  * @author Ruslan Gunawardana
  */
 @Data
-@NoArgsConstructor
 @Entity
+@Table(name = "super_hero")
 public class SuperHero {
     @Id
     @GeneratedValue(strategy = IDENTITY)
+    @Column(name = "super_hero_id")
     Integer id;
 
     @NotNull
@@ -29,11 +27,14 @@ public class SuperHero {
 
     String alterEgo;
 
+    protected SuperHero() {}
+
     public SuperHero(String name) {
         this.name = name;
     }
 
     public SuperHero(String name, String alterEgo) {
+        this.id = -1;
         this.name = name;
         this.alterEgo = alterEgo;
     }
