@@ -8,32 +8,34 @@
     <title>Comics</title>
 </h:head>
 <h:body>
-    <p:dataTable var="comics" value="#{comicsListView.lazyModel}" emptyMessage="No comics found."
-                 paginator="true" rows="10" rowsPerPageTemplate="5,10,15"
-                 paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}">
-        <p:column headerText="Title">
-            <h:outputText value="#{comics.title}"/>
-        </p:column>
-
-        <p:column headerText="Number">
-            <h:outputText value="#{comics.number}"/>
-        </p:column>
-
-        <p:column headerText="Publisher" filterBy="#{comics.publisher}">
-            <h:outputText value="#{comics.publisher}"/>
-        </p:column>
-
-        <p:column headerText="Price">
-            <h:outputText value="#{comics.price}"/>
-        </p:column>
-
-        <p:column headerText="Online version">
-            <h:outputText value="#{comics.onlineComics.url}"/>
-        </p:column>
-        <p:column headerText="Superheroes">
-            <t:listOutput value="#{comics.superHeroes}"/>
-        </p:column>
-    </p:dataTable>
+    <h:form>
+        <p:dataTable var="comics" value="#{comicsListView.lazyModel}" lazy="true"
+                     id="comicsTable" widgetVar="comicsTable" emptyMessage="No comics found."
+                     paginator="true" rows="10" rowsPerPageTemplate="5,10,15"
+                     paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}">
+            <p:column headerText="Id">
+                <h:outputText value="#{comics.id}"/>
+            </p:column>
+            <p:column headerText="Title">
+                <h:outputText value="#{comics.title}"/>
+            </p:column>
+            <p:column headerText="Number">
+                <h:outputText value="#{comics.number}"/>
+            </p:column>
+            <p:column headerText="Publisher" filterBy="#{comics.publisher}">
+                <h:outputText value="#{comics.publisher}"/>
+            </p:column>
+            <p:column headerText="Price">
+                <h:outputText value="#{comics.price}"/>
+            </p:column>
+            <p:column headerText="Online version">
+                <h:outputText value="#{empty comics.onlineComics ? ' ' : comics.onlineComics.url}"/>
+            </p:column>
+            <p:column headerText="Superheroes">
+                <t:listOutput value="#{comics.superHeroes}"/>
+            </p:column>
+        </p:dataTable>
+    </h:form>
     <p:button outcome="new-comics" value="Add comics" icon="ui-icon-star"/>
 </h:body>
 </html>

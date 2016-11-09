@@ -24,11 +24,11 @@
                 <p:message for="title" display="icon"/>
 
                 <h:outputLabel for="number" value="Number:"/>
-                <p:inputNumber id="number" value="#{newComics.number}" required="true" minValue="0" decimalPlaces="0"/>
+                <p:inputNumber id="number" value="#{newComics.number}" minValue="0" decimalPlaces="0"/>
                 <p:message for="number" display="icon"/>
 
                 <h:outputLabel for="online-url" value="Online URL:"/>
-                <p:inputText id="online-url" value="#{newComics.onlineComics.url}" required="true" label="Publisher">
+                <p:inputText id="online-url" value="#{newComics.onlineComics.url}" label="Publisher">
                     <f:validateLength minimum="2" maximum="35"/>
                 </p:inputText>
                 <p:message for="online-url" display="icon"/>

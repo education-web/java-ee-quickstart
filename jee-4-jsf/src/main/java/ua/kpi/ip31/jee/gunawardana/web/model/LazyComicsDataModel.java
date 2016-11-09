@@ -38,14 +38,14 @@ public class LazyComicsDataModel extends LazyDataModel<Comics> {
 
     @Override
     public List<Comics> load(int first, int pageSize, String sortField, SortOrder sortOrder, Map<String, Object> filters) {
-        List<Comics> result = Optional.ofNullable(filters)
-                .flatMap(f -> Optional.ofNullable(f.get(Comics_.publisher.getName())))
+        List<Comics> result = Optional.ofNullable(filters.get(Comics_.publisher.getName()))
                 .map(publisher -> repository.findByPublisher(publisher.toString()))
                 .orElseGet(() -> repository.findAll());
 
         result.sort(nullsLast(comparing(Comics::getId)));
 
         int resultSize = result.size();
+        this.setRowCount(resultSize);
         if (resultSize > pageSize) {
             if (first + pageSize >= resultSize) {
                 return result.subList(first, first + pageSize);
