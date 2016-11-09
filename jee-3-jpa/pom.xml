@@ -192,10 +192,10 @@
             <build>
                 <resources>
                     <resource>
-                        <directory>src/main/prod-resources</directory>
+                        <directory>${project.basedir}/src/main/resources-prod</directory>
                     </resource>
                     <resource>
-                        <directory>src/main/resources/prod</directory>
+                        <directory>${project.basedir}/src/main/resources/prod</directory>
                     </resource>
                 </resources>
             </build>
@@ -212,10 +212,10 @@
             <build>
                 <resources>
                     <resource>
-                        <directory>src/main/dev-resources</directory>
+                        <directory>${project.basedir}/src/main/resources-dev</directory>
                     </resource>
                     <resource>
-                        <directory>src/main/resources/dev</directory>
+                        <directory>${project.basedir}/src/main/resources/dev</directory>
                     </resource>
                 </resources>
                 <plugins>
@@ -225,7 +225,6 @@
                         <configuration>
                             <!-- Java EE doesn't require web.xml -->
                             <failOnMissingWebXml>false</failOnMissingWebXml>
-
                         </configuration>
                     </plugin>
                 </plugins>

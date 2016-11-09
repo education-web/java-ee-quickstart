@@ -33,7 +33,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 public class Comics {
     @Id
     @GeneratedValue(strategy = IDENTITY)
-    long id;
+    Long id;
 
     @NotNull
     @Size(min = 2, max = 35)
@@ -44,7 +44,7 @@ public class Comics {
     String publisher;
 
     @Min(0)
-    int number;
+    Integer number;
 
     @DecimalMin("0")
     @Digits(integer = 14, fraction = 2)
@@ -61,7 +61,7 @@ public class Comics {
 
     protected Comics() {}
 
-    public Comics(String title, String publisher, int number, BigDecimal price,
+    public Comics(String title, String publisher, Integer number, BigDecimal price,
                   OnlineComics onlineComics, List<SuperHero> superHeroes) {
         this.title = title;
         this.publisher = publisher;
