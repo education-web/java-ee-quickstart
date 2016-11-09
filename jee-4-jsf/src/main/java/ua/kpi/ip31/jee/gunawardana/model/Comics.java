@@ -1,6 +1,7 @@
 package ua.kpi.ip31.jee.gunawardana.model;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.Valid;
@@ -25,6 +26,7 @@ import static javax.persistence.GenerationType.IDENTITY;
  * @author Ruslan Gunawardana
  */
 @Data
+@NoArgsConstructor
 @Entity
 @Table(name = "comics")
 public class Comics {
@@ -58,8 +60,6 @@ public class Comics {
     @OneToMany(cascade = ALL, fetch = EAGER, orphanRemoval = true)
     @JoinColumn(name = "comics_id", nullable = false)
     List<SuperHero> superHeroes;
-
-    protected Comics() {}
 
     public Comics(String title, String publisher, Integer number, BigDecimal price,
                   OnlineComics onlineComics, List<SuperHero> superHeroes) {

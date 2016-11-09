@@ -1,7 +1,9 @@
-package ua.kpi.ip31.jee.gunawardana.model;
+package ua.kpi.ip31.jee.gunawardana.web.model;
 
 import org.primefaces.model.LazyDataModel;
 import org.primefaces.model.SortOrder;
+import ua.kpi.ip31.jee.gunawardana.model.Comics;
+import ua.kpi.ip31.jee.gunawardana.model.Comics_;
 import ua.kpi.ip31.jee.gunawardana.repository.ComicsRepository;
 
 import javax.inject.Inject;

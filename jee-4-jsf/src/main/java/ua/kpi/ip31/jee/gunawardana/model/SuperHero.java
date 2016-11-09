@@ -1,6 +1,7 @@
 package ua.kpi.ip31.jee.gunawardana.model;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -14,6 +15,7 @@ import static javax.persistence.GenerationType.IDENTITY;
  * @author Ruslan Gunawardana
  */
 @Data
+@NoArgsConstructor
 @Entity
 @Table(name = "super_hero")
 public class SuperHero {
@@ -26,8 +28,6 @@ public class SuperHero {
     String name;
 
     String alterEgo;
-
-    protected SuperHero() {}
 
     public SuperHero(String name) {
         this.name = name;

@@ -2,6 +2,7 @@ package ua.kpi.ip31.jee.gunawardana.model;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 import org.hibernate.validator.constraints.URL;
 
@@ -22,6 +23,7 @@ import static javax.persistence.GenerationType.IDENTITY;
  * @author Ruslan Gunawardana
  */
 @Data
+@NoArgsConstructor
 @EqualsAndHashCode(exclude = "comics")
 @ToString(exclude = "comics")
 @Entity
@@ -44,8 +46,6 @@ public class OnlineComics {
     @Valid
     @OneToOne
     Comics comics;
-
-    protected OnlineComics() {}
 
     public OnlineComics(String url, BigDecimal price) {
         this.price = price;
