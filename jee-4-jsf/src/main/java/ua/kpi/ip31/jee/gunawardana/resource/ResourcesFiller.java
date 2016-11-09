@@ -3,7 +3,8 @@ package ua.kpi.ip31.jee.gunawardana.resource;
 import ua.kpi.ip31.jee.gunawardana.model.Comics;
 import ua.kpi.ip31.jee.gunawardana.model.OnlineComics;
 import ua.kpi.ip31.jee.gunawardana.model.SuperHero;
-import ua.kpi.ip31.jee.gunawardana.repository.JpaComicsRepository;
+import ua.kpi.ip31.jee.gunawardana.repository.ComicsRepository;
+import ua.kpi.ip31.jee.gunawardana.stereotype.DevelopmentEnvironment;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.Initialized;
@@ -13,12 +14,16 @@ import java.math.BigDecimal;
 
 import static java.util.Arrays.asList;
 
+/**
+ * Fills the repository with some test {@link Comics} objects.
+ */
 @ApplicationScoped
+@DevelopmentEnvironment
 public class ResourcesFiller {
-    final JpaComicsRepository comicsRepository;
+    final ComicsRepository comicsRepository;
 
     @Inject
-    public ResourcesFiller(JpaComicsRepository comicsRepository) {
+    public ResourcesFiller(ComicsRepository comicsRepository) {
         this.comicsRepository = comicsRepository;
     }
 

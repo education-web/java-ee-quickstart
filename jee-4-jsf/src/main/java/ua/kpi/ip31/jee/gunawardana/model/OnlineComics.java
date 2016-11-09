@@ -30,7 +30,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 public class OnlineComics {
     @Id
     @GeneratedValue(strategy = IDENTITY)
-    long id;
+    Long id;
 
     @NotNull
     @URL

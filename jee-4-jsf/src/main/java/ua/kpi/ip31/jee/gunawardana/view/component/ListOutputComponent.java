@@ -1,4 +1,4 @@
-package ua.kpi.ip31.jee.gunawardana.view;
+package ua.kpi.ip31.jee.gunawardana.view.component;
 
 import javax.faces.component.FacesComponent;
 import javax.faces.component.UIComponentBase;

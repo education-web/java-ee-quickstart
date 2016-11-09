@@ -24,7 +24,12 @@ import java.util.Optional;
 @Transactional
 @ApplicationScoped
 public class JpaComicsRepository implements ComicsRepository {
-    @Inject EntityManager em;
+    EntityManager em;
+
+    @Inject
+    public JpaComicsRepository(EntityManager em) {
+        this.em = em;
+    }
 
     @Override
     public Optional<Comics> findById(long id) {

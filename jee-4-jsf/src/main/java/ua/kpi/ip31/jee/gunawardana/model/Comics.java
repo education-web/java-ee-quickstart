@@ -34,7 +34,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 public class Comics {
     @Id
     @GeneratedValue(strategy = IDENTITY)
-    long id;
+    Long id;
 
     @NotNull
     @Size(min = 2, max = 35)

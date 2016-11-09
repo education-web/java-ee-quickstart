@@ -22,7 +22,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 public class SuperHero {
     @Id
     @GeneratedValue(strategy = IDENTITY)
-    int id;
+    Integer id;
 
     @NotNull
     String name;

@@ -1,4 +1,4 @@
-package ua.kpi.ip31.jee.gunawardana.controller;
+package ua.kpi.ip31.jee.gunawardana.view;
 
 import lombok.extern.log4j.Log4j2;
 import ua.kpi.ip31.jee.gunawardana.model.Comics;
