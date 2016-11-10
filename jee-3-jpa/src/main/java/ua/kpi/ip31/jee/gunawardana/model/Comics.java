@@ -4,18 +4,13 @@ import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.Valid;
-import javax.validation.constraints.DecimalMin;
-import javax.validation.constraints.Digits;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 
 import static javax.persistence.CascadeType.ALL;
-import static javax.persistence.FetchType.EAGER;
+import static javax.persistence.FetchType.LAZY;
 import static javax.persistence.GenerationType.IDENTITY;
 
 /**
@@ -55,7 +50,7 @@ public class Comics {
     OnlineComics onlineComics;
 
     @Valid
-    @OneToMany(cascade = ALL, fetch = EAGER, orphanRemoval = true)
+    @OneToMany(cascade = ALL, fetch = LAZY, orphanRemoval = true)
     @JoinColumn(name = "comics_id", nullable = false)
     List<SuperHero> superHeroes;
 
