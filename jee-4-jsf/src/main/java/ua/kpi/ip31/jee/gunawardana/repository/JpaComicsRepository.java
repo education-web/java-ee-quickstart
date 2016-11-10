@@ -20,7 +20,6 @@ import java.util.Optional;
  * @author Ruslan Gunawardana
  */
 @Log4j2
-@NoArgsConstructor
 @Transactional
 @ApplicationScoped
 public class JpaComicsRepository implements ComicsRepository {

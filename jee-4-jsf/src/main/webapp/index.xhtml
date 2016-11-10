@@ -13,9 +13,6 @@
                      id="comicsTable" widgetVar="comicsTable" emptyMessage="No comics found."
                      paginator="true" rows="10" rowsPerPageTemplate="5,10,15"
                      paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}">
-            <p:column headerText="Id">
-                <h:outputText value="#{comics.id}"/>
-            </p:column>
             <p:column headerText="Title">
                 <h:outputText value="#{comics.title}"/>
             </p:column>
@@ -25,11 +22,14 @@
             <p:column headerText="Publisher" filterBy="#{comics.publisher}">
                 <h:outputText value="#{comics.publisher}"/>
             </p:column>
+            <p:column headerText="Online version">
+                <h:outputText value="#{empty comics.onlineComics ? ' ' : comics.onlineComics.url}"/>
+            </p:column>
             <p:column headerText="Price">
                 <h:outputText value="#{comics.price}"/>
             </p:column>
-            <p:column headerText="Online version">
-                <h:outputText value="#{empty comics.onlineComics ? ' ' : comics.onlineComics.url}"/>
+            <p:column headerText="Online Price">
+                <h:outputText value="#{empty comics.onlineComics ? ' ' : comics.onlineComics.price}"/>
             </p:column>
             <p:column headerText="Superheroes">
                 <t:listOutput value="#{comics.superHeroes}"/>
