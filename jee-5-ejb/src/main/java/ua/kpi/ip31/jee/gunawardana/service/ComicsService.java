@@ -7,6 +7,7 @@ import ua.kpi.ip31.jee.gunawardana.repository.ComicsHistoryRepository;
 import ua.kpi.ip31.jee.gunawardana.repository.ComicsRepository;
 
 import javax.ejb.Stateless;
+import javax.ejb.TransactionAttribute;
 import javax.inject.Inject;
 import java.time.LocalDate;
 import java.util.List;
@@ -17,6 +18,7 @@ import java.util.Optional;
  * @author Ruslan Gunawardana
  */
 @Stateless
+@TransactionAttribute
 @Log4j2
 public class ComicsService {
     ComicsRepository comicsRepository;
