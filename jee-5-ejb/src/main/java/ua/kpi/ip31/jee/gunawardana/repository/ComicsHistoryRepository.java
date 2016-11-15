@@ -5,11 +5,9 @@ import ua.kpi.ip31.jee.gunawardana.model.ComicsHistoryRecord;
 
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
-import javax.ejb.TransactionAttributeType;
 import javax.ejb.TransactionManagement;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceException;
 import javax.transaction.UserTransaction;
 
 import static javax.ejb.TransactionAttributeType.REQUIRES_NEW;
@@ -44,7 +42,8 @@ public class ComicsHistoryRepository {
         transaction.begin();
         try {
             ComicsHistoryRecord savedRecord = entityManager.merge(record);
-            if (true) throw new PersistenceException("Shit");
+            //// can be uncommented in order to check how the behavior changes if transaction fails
+            //if (true) throw new PersistenceException("Shit");
             transaction.commit();
             return savedRecord;
         } catch (Exception pe) {
