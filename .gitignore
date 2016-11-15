@@ -19,6 +19,9 @@
 **/.idea/gradle.xml
 **/.idea/libraries
 
+# SBT:
+**/.idea/sbt.xml
+
 # Mongo Explorer plugin:
 **/.idea/mongoSettings.xml
 
