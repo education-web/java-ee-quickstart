@@ -18,13 +18,16 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Gradle: org.postgresql:postgresql:9.4.1211" level="project" />
+    <orderEntry type="library" name="Gradle: org.glassfish.web:javax.servlet.jsp.jstl:1.2.5-b03" level="project" />
+    <orderEntry type="library" name="Gradle: com.h2database:h2:1.4.193" level="project" />
     <orderEntry type="library" name="Gradle: com.zaxxer:HikariCP:2.5.1" level="project" />
-    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.7" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.jboss.spec.javax.el:jboss-el-api_3.0_spec:1.0.4.Final" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.jboss.spec.javax.servlet.jstl:jboss-jstl-api_1.2_spec:1.1.2.Final" level="project" />
+    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-nop:1.7.12" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: javax.servlet:javax.servlet-api:3.1.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: javax.websocket:javax.websocket-api:1.0" level="project" />
+    <orderEntry type="library" name="Gradle: javax.servlet.jsp.jstl:jstl-api:1.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.21" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: org.projectlombok:lombok:1.16.10" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.jboss.spec.javax.servlet:jboss-servlet-api_3.1_spec:1.0.0.Final" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.jboss.spec.javax.servlet.jsp:jboss-jsp-api_2.3_spec:1.0.1.Final" level="project" />
+    <orderEntry type="library" name="Gradle: javax.servlet:servlet-api:2.5" level="project" />
+    <orderEntry type="library" name="Gradle: javax.servlet.jsp:jsp-api:2.1" level="project" />
   </component>
 </module>

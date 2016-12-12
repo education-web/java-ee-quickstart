@@ -17,9 +17,14 @@
           <element id="dir-copy" path="$PROJECT_DIR$/build/resources/main" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="Gradle: org.postgresql:postgresql:9.4.1211" />
+          <element id="library" level="project" name="Gradle: org.glassfish.web:javax.servlet.jsp.jstl:1.2.5-b03" />
+          <element id="library" level="project" name="Gradle: com.h2database:h2:1.4.193" />
           <element id="library" level="project" name="Gradle: com.zaxxer:HikariCP:2.5.1" />
-          <element id="library" level="project" name="Gradle: org.slf4j:slf4j-api:1.7.7" />
+          <element id="library" level="project" name="Gradle: org.slf4j:slf4j-nop:1.7.12" />
+          <element id="library" level="project" name="Gradle: javax.servlet.jsp.jstl:jstl-api:1.2" />
+          <element id="library" level="project" name="Gradle: org.slf4j:slf4j-api:1.7.21" />
+          <element id="library" level="project" name="Gradle: javax.servlet:servlet-api:2.5" />
+          <element id="library" level="project" name="Gradle: javax.servlet.jsp:jsp-api:2.1" />
         </element>
       </element>
     </root>

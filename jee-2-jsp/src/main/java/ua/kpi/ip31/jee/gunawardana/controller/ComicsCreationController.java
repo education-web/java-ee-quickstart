@@ -25,13 +25,14 @@ public final class ComicsCreationController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Comics comics = new Comics(
+        Comics draftComics = new Comics(
                 req.getParameter("title"),
                 req.getParameter("publisher"),
                 req.getParameter("author"),
                 parseInt(req.getParameter("number")),
                 new BigDecimal(req.getParameter("price")));
-        comicsRepository.save(comics);
+        Comics savedComics = comicsRepository.save(draftComics);
+        System.out.println(savedComics);
         resp.sendRedirect(req.getContextPath());
     }
 }

@@ -1,29 +1,21 @@
-plugins {
-    id 'java'
-    id 'war'
-    id 'io.spring.dependency-management' version '0.6.1.RELEASE'
-}
+apply plugin: 'java'
+apply plugin: 'war'
+apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 repositories { jcenter() }
 
-dependencyManagement {
-    imports {
-        mavenBom 'org.wildfly.bom:wildfly-javaee7-with-tools:10.1.0.Final'
-    }
-}
-
 dependencies {
     // annotation processors
     compileOnly 'org.projectlombok:lombok:1.16.10'
 
     // web
-    compileOnly 'org.jboss.spec.javax.servlet.jstl:jboss-jstl-api_1.2_spec'
+    compile 'org.glassfish.web:javax.servlet.jsp.jstl:1.2.5-b03'
 
     // persistence
-    compile 'org.postgresql:postgresql:9.4.1211'
+    compile 'com.h2database:h2:1.4.193'
     compile 'com.zaxxer:HikariCP:2.5.1'
 
     // test

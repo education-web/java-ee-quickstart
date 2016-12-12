@@ -3,7 +3,7 @@ package ua.kpi.ip31.jee.gunawardana;
 import ua.kpi.ip31.jee.gunawardana.connection.ConnectionManager;
 import ua.kpi.ip31.jee.gunawardana.connection.HikariConnectionManager;
 import ua.kpi.ip31.jee.gunawardana.repository.ComicsRepository;
-import ua.kpi.ip31.jee.gunawardana.repository.PostgresJdbcComicsRepository;
+import ua.kpi.ip31.jee.gunawardana.repository.JdbcComicsRepository;
 
 /**
  * Entry point for getting dependencies.
@@ -12,10 +12,10 @@ import ua.kpi.ip31.jee.gunawardana.repository.PostgresJdbcComicsRepository;
  */
 public final class ComicsStoreServiceLocator {
     public static ConnectionManager getConnectionManager() {
-        return new HikariConnectionManager("/datasource.properties");
+        return new HikariConnectionManager("/postgresql-ds.properties");
     }
 
     public static ComicsRepository getComicsRepository() {
-        return new PostgresJdbcComicsRepository(getConnectionManager());
+        return new JdbcComicsRepository(getConnectionManager());
     }
 }

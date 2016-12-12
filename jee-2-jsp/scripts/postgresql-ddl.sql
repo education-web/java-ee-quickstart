@@ -1,6 +1,4 @@
-DROP TABLE IF EXISTS super_hero;
 DROP TABLE IF EXISTS comics;
-DROP TABLE IF EXISTS online_comics;
 
 CREATE TABLE comics (
   id        BIGSERIAL,

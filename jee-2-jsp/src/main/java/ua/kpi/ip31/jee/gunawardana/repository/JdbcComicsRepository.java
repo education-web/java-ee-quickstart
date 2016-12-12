@@ -4,19 +4,25 @@ import lombok.SneakyThrows;
 import ua.kpi.ip31.jee.gunawardana.connection.ConnectionManager;
 import ua.kpi.ip31.jee.gunawardana.model.Comics;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+
+import static java.sql.Statement.RETURN_GENERATED_KEYS;
 
 /**
  * Repository implementation grants access to {@link Comics} in the PostgreSQL RDBMS.
  * Immutable. Thread-safe.
  */
-public final class PostgresJdbcComicsRepository implements ComicsRepository {
+public final class JdbcComicsRepository implements ComicsRepository {
     private final ConnectionManager connectionManager;
 
-    public PostgresJdbcComicsRepository(ConnectionManager connectionManager) {
+    public JdbcComicsRepository(ConnectionManager connectionManager) {
         this.connectionManager = connectionManager;
     }
 
@@ -65,18 +71,20 @@ public final class PostgresJdbcComicsRepository implements ComicsRepository {
     @Override
     public Comics save(Comics comics) {
         String sql = "INSERT INTO comics (title, publisher, author, num, price)" +
-                "VALUES (?, ?, ?, ?, ?) RETURNING id";
+                "VALUES (?, ?, ?, ?, ?)";
         try (Connection connection = connectionManager.getConnection();
-             PreparedStatement statement = connection.prepareStatement(sql)) {
+             PreparedStatement statement = connection.prepareStatement(sql, RETURN_GENERATED_KEYS)) {
             statement.setString(1, comics.getTitle());
             statement.setString(2, comics.getPublisher());
             statement.setString(3, comics.getAuthor());
             statement.setInt(4, comics.getNumber());
             statement.setBigDecimal(5, comics.getPrice());
-            try (ResultSet rs = statement.executeQuery()) {
+            statement.executeUpdate();
+            try (ResultSet rs = statement.getGeneratedKeys()) {
                 rs.next();
+                long id = rs.getLong(1);
                 connection.commit();
-                return comics.withId(rs.getLong(1));
+                return comics.withId(id);
             }
         }
     }
